@@ -62,7 +62,7 @@ vetapp/
 
 ### Paso 1: Clonar el repositorio
 ```bash
-git clone https://github.com/Samuel-Tabares/proyecto_nuclear
+git clone https://github.com/Samuel-Tabares/vetapp
 cd vetapp
 ```
 
