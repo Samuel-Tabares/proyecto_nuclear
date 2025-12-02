@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetApp - Sistema Veterinario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>🐾 VetApp - Sistema de Gestión Veterinaria</h1>
+    <p>Sistema modular con patrones de diseño</p>
+</header>
+
+<nav>
+    <button onclick="cambiarSeccion('propietarios')">Propietarios</button>
+    <button onclick="cambiarSeccion('mascotas')">Mascotas</button>
+    <button onclick="cambiarSeccion('citas')">Citas</button>
+    <button onclick="cambiarSeccion('historias')">Historias Clínicas</button>
+    <button onclick="cambiarSeccion('prescripciones')">Prescripciones</button>
+    <button onclick="cambiarSeccion('facturas')">Facturas</button>
+</nav>
+
+<main id="contenido">
+    <div class="bienvenida">
+        <h2>Bienvenido al Sistema VetApp</h2>
+        <p>Selecciona una opción del menú para comenzar</p>
+        <div class="features">
+            <div class="feature">
+                <h3>✅ Patrones Implementados</h3>
+                <ul>
+                    <li>Repository Pattern</li>
+                    <li>Service Layer</li>
+                    <li>Facade Pattern (Citas)</li>
+                    <li>Factory Pattern (Notificaciones)</li>
+                    <li>Strategy Pattern (Facturación)</li>
+                </ul>
+            </div>
+            <div class="feature">
+                <h3>🏗️ Arquitectura</h3>
+                <ul>
+                    <li>Arquitectura Modular</li>
+                    <li>Separación de responsabilidades</li>
+                    <li>Dockerizado</li>
+                    <li>API REST</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

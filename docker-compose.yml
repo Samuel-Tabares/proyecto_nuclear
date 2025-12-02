@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # Base de datos MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: vetapp-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vetapp
+      MYSQL_USER: vetapp_user
+      MYSQL_PASSWORD: vetapp_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - vetapp-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+      interval: 10s
+
+  # Aplicación Spring Boot
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vetapp-api
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      # Base de datos
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: vetapp
+      DB_USER: vetapp_user
+      DB_PASSWORD: vetapp_pass
+
+      # Email
+      MAIL_USERNAME: stabares_26@cue.edu.co
+      MAIL_PASSWORD: gntfzaqvxevuxolj
+      MAIL_ENABLED: true
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - vetapp-network
+
+networks:
+  vetapp-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
