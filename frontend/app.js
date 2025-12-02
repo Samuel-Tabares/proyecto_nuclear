@@ -5,7 +5,7 @@
 // Configuración de API - Detecta automáticamente si es local o producción
 const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:8080/api'
-    : window.API_BASE_URL || 'https://tu-app.railway.app/api'; // Cambiar por tu URL de Railway
+    : window.API_BASE_URL || 'https://vetapp-production-efdb.up.railway.app/api';
 
 // Estado global
 let propietarios = [];
