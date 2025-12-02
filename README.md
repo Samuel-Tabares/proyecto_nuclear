@@ -55,14 +55,13 @@ src/main/java/com/veterinaria/
 
 ### Paso 1: Clonar el repositorio
 ```bash
-git clone <tu-repositorio>
+git clone https://github.com/Samuel-Tabares/proyecto_nuclear
 cd vetapp
 ```
 
 ### Paso 2: Configurar variables de entorno
 ```bash
 cp .env.example .env
-# Editar .env con tus credenciales de Gmail
 ```
 
 **Importante**: Para Gmail, debes:
