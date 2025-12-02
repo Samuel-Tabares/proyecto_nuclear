@@ -204,6 +204,22 @@ POST /api/prescripciones
 }
 ```
 
+### 5.5. Modificar Historia Clínica
+```json
+PUT /api/historias/1
+{
+  "mascotaId": 1,
+  "fechaConsulta": "2024-12-10T14:30:00",
+  "diagnostico": "Otitis moderada - Actualizado",
+  "sintomas": "Rascado excesivo de orejas, enrojecimiento",
+  "tratamiento": "Gotas óticas + Antibiótico oral",
+  "observaciones": "Mejoría después de 3 días de tratamiento",
+  "pesoRegistrado": 26.0,
+  "temperatura": 38.2
+}
+```
+*Nota: Reemplaza el `1` en la URL por el ID de la historia que deseas modificar*
+
 ### 6. Crear Factura
 ```json
 POST /api/facturas
