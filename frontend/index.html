@@ -3,51 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VetApp - Sistema Veterinario</title>
+    <title>VetApp - Sistema de Gestión Veterinaria</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- jsPDF para generar PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 <header>
-    <h1>🐾 VetApp - Sistema de Gestión Veterinaria</h1>
-    <p>Sistema modular con patrones de diseño</p>
+    <div class="header-content">
+        <h1>🐾 VetApp</h1>
+        <p>Sistema de Gestión Veterinaria</p>
+    </div>
 </header>
 
 <nav>
-    <button onclick="cambiarSeccion('propietarios')">Propietarios</button>
-    <button onclick="cambiarSeccion('mascotas')">Mascotas</button>
-    <button onclick="cambiarSeccion('citas')">Citas</button>
-    <button onclick="cambiarSeccion('historias')">Historias Clínicas</button>
-    <button onclick="cambiarSeccion('prescripciones')">Prescripciones</button>
-    <button onclick="cambiarSeccion('facturas')">Facturas</button>
+    <button class="nav-btn active" onclick="cambiarSeccion('inicio')">🏠 Inicio</button>
+    <button class="nav-btn" onclick="cambiarSeccion('propietarios')">👤 Propietarios</button>
+    <button class="nav-btn" onclick="cambiarSeccion('mascotas')">🐕 Mascotas</button>
+    <button class="nav-btn" onclick="cambiarSeccion('citas')">📅 Citas</button>
+    <button class="nav-btn" onclick="cambiarSeccion('historias')">📋 Historias Clínicas</button>
+    <button class="nav-btn" onclick="cambiarSeccion('prescripciones')">💊 Prescripciones</button>
+    <button class="nav-btn" onclick="cambiarSeccion('facturas')">🧾 Facturas</button>
 </nav>
 
 <main id="contenido">
-    <div class="bienvenida">
-        <h2>Bienvenido al Sistema VetApp</h2>
-        <p>Selecciona una opción del menú para comenzar</p>
-        <div class="features">
-            <div class="feature">
-                <h3>✅ Patrones Implementados</h3>
-                <ul>
-                    <li>Repository Pattern</li>
-                    <li>Service Layer</li>
-                    <li>Facade Pattern (Citas)</li>
-                    <li>Factory Pattern (Notificaciones)</li>
-                    <li>Strategy Pattern (Facturación)</li>
-                </ul>
-            </div>
-            <div class="feature">
-                <h3>🏗️ Arquitectura</h3>
-                <ul>
-                    <li>Arquitectura Modular</li>
-                    <li>Separación de responsabilidades</li>
-                    <li>Dockerizado</li>
-                    <li>API REST</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <!-- Contenido dinámico -->
 </main>
+
+<footer>
+    <p>VetApp © 2025 - Sistema de Gestión Veterinaria con Arquitectura Modular</p>
+</footer>
+
+<!-- Modal para mensajes -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="cerrarModal()">&times;</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
 
 <script src="app.js"></script>
 </body>
