@@ -14,17 +14,24 @@ Sistema completo de gestión veterinaria con **arquitectura modular** y **patron
 
 ### Arquitectura Modular
 ```
-src/main/java/com/veterinaria/
-├── modules/
-│   ├── propietario/      # Gestión de propietarios
-│   ├── mascota/          # Gestión de mascotas
-│   ├── cita/             # Agendamiento con notificaciones
-│   ├── historia/         # Historias clínicas
-│   ├── prescripcion/     # Prescripciones médicas
-│   ├── facturacion/      # Facturación con estrategias
-│   └── notificacion/     # Sistema de notificaciones
-├── shared/               # Componentes compartidos
-└── config/               # Configuraciones
+vetapp/  
+├── src/main/java/com/veterinaria/
+│    ├── modules/
+│    │   ├── propietario/      # Gestión de propietarios
+│    │   ├── mascota/          # Gestión de mascotas
+│    │   ├── cita/             # Agendamiento con notificaciones
+│    │   ├── historia/         # Historias clínicas
+│    │   ├── prescripcion/     # Prescripciones médicas
+│    │   ├── facturacion/      # Facturación con estrategias
+│    │   └── notificacion/     # Sistema de notificaciones
+│    ├── shared/               # Componentes compartidos
+│    └── config/               # Configuraciones
+├──.gitignore
+├──application.yml
+├──docker-compose.yml
+├──dockerfile
+├──pom.xml
+├──README.md
 ```
 
 ## 🚀 Stack Tecnológico
