@@ -18,7 +18,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/prescripciones")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class PrescripcionController {
 
     private final PrescripcionService service;

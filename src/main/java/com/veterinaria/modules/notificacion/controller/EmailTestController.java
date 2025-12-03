@@ -22,7 +22,6 @@ import java.util.Map;
 @RequestMapping("/api/test")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "*")
 public class EmailTestController {
 
     private final JavaMailSender mailSender;

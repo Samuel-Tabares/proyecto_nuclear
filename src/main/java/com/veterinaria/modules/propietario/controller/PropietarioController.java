@@ -18,7 +18,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/propietarios")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*") // Para desarrollo con frontend
 public class PropietarioController {
 
     private final PropietarioService service;
