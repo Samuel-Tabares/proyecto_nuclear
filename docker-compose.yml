@@ -1,4 +1,3 @@
-
 services:
   # Base de datos MySQL
   mysql:
@@ -39,10 +38,17 @@ services:
       DB_USER: vetapp_user
       DB_PASSWORD: vetapp_pass
 
-      # Email
+      # Email - Variables explícitas
       MAIL_USERNAME: stabares_26@cue.edu.co
       MAIL_PASSWORD: gntfzaqvxevuxolj
-      MAIL_ENABLED: true
+      MAIL_ENABLED: "true"
+
+      # Spring Mail properties explícitas (por si acaso)
+      SPRING_MAIL_HOST: smtp.gmail.com
+      SPRING_MAIL_PORT: 587
+      SPRING_MAIL_USERNAME: stabares_26@cue.edu.co
+      SPRING_MAIL_PASSWORD: gntfzaqvxevuxolj
+
     depends_on:
       mysql:
         condition: service_healthy

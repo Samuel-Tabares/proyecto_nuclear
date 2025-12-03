@@ -17,6 +17,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: false
 
+  # Configuración de Mail MEJORADA para Railway/Producción
   mail:
     host: smtp.gmail.com
     port: 587
@@ -29,9 +30,15 @@ spring:
           starttls:
             enable: true
             required: true
-          connectiontimeout: 5000
-          timeout: 5000
-          writetimeout: 5000
+          ssl:
+            trust: smtp.gmail.com
+            enable: false
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+        transport:
+          protocol: smtp
+        debug: true
 
 server:
   port: ${PORT:8080}
@@ -44,4 +51,7 @@ app:
 logging:
   level:
     root: INFO
-    com.veterinaria: INFO
+    com.veterinaria: DEBUG
+    org.springframework.mail: DEBUG
+    com.sun.mail: DEBUG
+    javax.mail: DEBUG
